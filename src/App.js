@@ -19,15 +19,22 @@ const list = [
     },
 ];
 
-const App = () => (
-    <div>
-        <h1>My Hacker Stories</h1>
-        <label htmlFor="search">Search: </label>
-        <input id="search" type="text" />
-        <hr />
-        <List />
-    </div>
-);
+const App = () => {
+    const handleChange = event => {
+        console.log(event);
+    };
+
+    return (
+        <div>
+            <h1>My Hacker Stories</h1>
+            <label htmlFor="search">Search: </label>
+            <input id="search" type="text" onChange={handleChange} />
+            <hr />
+
+            <List />
+        </div>
+    );
+};
 
 const List = () =>
     list.map(item => (
